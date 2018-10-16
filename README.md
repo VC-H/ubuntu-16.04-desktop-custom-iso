@@ -12,3 +12,4 @@ git clone https://github.com/VC-H/ubuntu-16.04-desktop-custom-iso.git custom
 cd custom
 make iso
 ```
+![screenshot](https://github.com/VC-H/ubuntu-16.04-desktop-custom-iso/blob/master/screenshot.png?raw=true)
