@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Exec=/opt/custom/bin/customapp.sh
+Name=customapp
+Comment=customapp nosudo
+Icon=/opt/custom/share/icons/smiley-locked.png
+Name[en_GB]=customapp

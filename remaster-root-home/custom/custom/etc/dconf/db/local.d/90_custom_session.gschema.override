@@ -1,0 +1,21 @@
+[org/gnome/online-accounts]
+whitelisted-providers=[false]
+
+[org/gnome/desktop/session]
+idle-delay=uint32 3600
+
+[org/gnome/desktop/screensaver]
+lock-enabled=false
+ubuntu-lock-on-suspend=false
+
+[org/gnome/desktop/lockdown]
+disable-user-switching=true
+disable-lock-screen=true
+user-administration-disabled=true
+
+[com/canonical/unity/dash]
+scopes=['home.scope', 'applications.scope', 'files.scope']
+
+[com/canonical/unity/launcher]
+favorites=['application://ubiquity.desktop', 'application://customapp-sudo.desktop', 'application://org.gnome.Nautilus.desktop', 'application://firefox.desktop', 'unity://running-apps', 'unity://expo-icon', 'unity://devices']
+

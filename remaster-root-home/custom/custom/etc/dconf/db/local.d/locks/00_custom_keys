@@ -1,0 +1,11 @@
+/org/gnome/desktop/background/picture-uri
+/org/gnome/desktop/background/picture-options
+/com/canonical/unity-greeter/draw-user-backgrounds
+/com/canonical/unity-greeter/background
+/org/gnome/desktop/screensaver/lock-enabled
+/org/gnome/desktop/screensaver/ubuntu-lock-on-suspend
+/org/gnome/desktop/lockdown/disable-user-switching
+/org/gnome/desktop/lockdown/disable-lock-screen
+/org/gnome/desktop/lockdown/user-administration-disabled
+/org/gnome/settings-daemon/plugins/power/sleep-inactive-ac-timeout
+/org/gnome/settings-daemon/plugins/power/sleep-inactive-battery-timeout

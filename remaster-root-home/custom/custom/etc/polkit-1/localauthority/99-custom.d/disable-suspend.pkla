@@ -1,0 +1,21 @@
+[Disable suspend]
+Identity=unix-user:*
+Action=org.freedesktop.login1.suspend
+ResultActive=no
+ResultInactive=no
+ResultAny=no
+
+[Disable suspend ignore inhibit]
+Identity=unix-user:*
+Action=org.freedesktop.login1.suspend-ignore-inhibit
+ResultActive=no
+ResultInactive=no
+ResultAny=no
+
+[Disable suspend multiple sessions]
+Identity=unix-user:*
+Action=org.freedesktop.login1.suspend-multiple-sessions
+ResultActive=no
+ResultInactive=no
+ResultAny=no
+

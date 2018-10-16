@@ -1,0 +1,7 @@
+[Disable lock-sessions]
+Identity=unix-user:*
+Action=org.freedesktop.login1.lock-sessions
+ResultActive=no
+ResultInactive=no
+ResultAny=no
+
