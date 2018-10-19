@@ -14,7 +14,10 @@ default:
 	@echo
 	@echo "** WARNING! make on the target filesytem only! **"
 	@echo
-	@echo "usage: make [target] [o=--yes] (default is o=--dry-run)"
+	@echo "usages:"
+	@echo
+	@echo "  make customize o=--yes # (main goal)"
+	@echo "  make [target] [o=--yes] # (default is o=--dry-run)"
 	@echo
 	@echo "targets:"
 	@echo

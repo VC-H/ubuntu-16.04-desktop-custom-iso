@@ -15,9 +15,12 @@ $(error )
 endif
 
 
-default: # this message
+default: # (this message)
 	@echo
-	@echo "usage: make [target]"
+	@echo "usages:"
+	@echo
+	@echo "  make iso # (main goal)"
+	@echo "  make [target]"
 	@echo
 	@echo "targets: (in workflow order)"
 	@echo
