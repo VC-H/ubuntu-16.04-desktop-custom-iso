@@ -46,14 +46,14 @@ umount:
 chroot-umount: chroot # (umount when chroot exits)
 	make --quiet umount
 
-customize: # (make customize in /root of chroot)
+customize: remaster-root # (make customize in /root of chroot)
 	sudo uck-remaster-chroot-rootfs . \
 	/bin/bash -c "(cd /root ; make customize)"
 
 pack-rootfs: umount
 	sudo uck-remaster-pack-rootfs .
 
-custom-preseed:
+custom-preseed: remaster-iso
 	sudo rsync -av ./remaster-root-home/iso/ ./remaster-iso
 
 pack-iso:
