@@ -14,7 +14,7 @@ default: # (this message)
 	@echo
 
 install: # (main goal)
-	( cd custom ; sudo tar cf - . ) | ( cd / ; sudo tar xvf - )
+	rsync -av ./custom/ /
 	sudo dconf update
 
 polkitd-restart: # (only for oem installation)
