@@ -1,5 +1,9 @@
 SHELL = /bin/bash
 
+ifeq ($(shell stat -c %i /),2)
+$(error make in chroot filesytem only! ***)
+endif
+
 DQUERY = dpkg-query -Wf '$${Package}\n'
 DSQUERY = dpkg-query -Wf '$${Installed-Size}\t$${Package}\n'
 PURGE = apt-get autoremove --purge $(o)
@@ -11,8 +15,6 @@ NL = \
 o = --yes
 
 default:
-	@echo
-	@echo "** WARNING! make on the target filesytem only! **"
 	@echo
 	@echo "usages:"
 	@echo

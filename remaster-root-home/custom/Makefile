@@ -1,8 +1,10 @@
 SHELL = /bin/bash
 
+ifeq ($(shell stat -c %i /),2)
+$(error make in chroot filesytem only! ***)
+endif
+
 default: # (this message)
-	@echo
-	@echo "** WARNING! make on the target filesytem only! **"
 	@echo
 	@echo "usage: make [target]"
 	@echo
