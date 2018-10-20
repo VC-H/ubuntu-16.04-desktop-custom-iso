@@ -1,7 +1,8 @@
 SHELL = /bin/bash
 
 ifeq ($(shell stat -c %i /),2)
-$(error make in chroot filesytem only! ***)
+$(info )
+$(info WARNING! non-chroot filesytem! ***)
 endif
 
 DQUERY = dpkg-query -Wf '$${Package}\n'
@@ -122,12 +123,12 @@ all-no-only-all:
 smaller:
 	make --quiet all-no-only-all | xargs make --quiet o=$(o)
 
-install-custom:
+install-new-custom:
 	rm -rf /opt/custom
-	cp -r ./custom /opt/
+	rsync -av ./custom /opt/
 
 sudoers:
 	cp ./sudoers.d/custom /etc/sudoers.d/
 
-customize: smaller sudoers install-custom
-	( cd /opt/custom ; make install )
+customize: smaller sudoers install-new-custom
+	( cd /opt/custom ; make rsync )

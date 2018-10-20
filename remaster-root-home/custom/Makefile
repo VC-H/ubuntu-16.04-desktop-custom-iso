@@ -1,7 +1,8 @@
 SHELL = /bin/bash
 
 ifeq ($(shell stat -c %i /),2)
-$(error make in chroot filesytem only! ***)
+$(info )
+$(info *** WARNING! non-chroot filesytem! ***)
 endif
 
 default: # (this message)
@@ -13,7 +14,7 @@ default: # (this message)
 	@grep "^[^[:space:]].*:" ./Makefile | sed -e "s/^\(.*\):/  \1/g"
 	@echo
 
-install: # (main goal)
+rsync: # (main goal)
 	rsync -av ./custom/ /
 	sudo dconf update
 
