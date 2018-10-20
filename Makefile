@@ -34,7 +34,7 @@ remaster-iso: $(ISO_UBUNTU)
 remaster-root: remaster-iso
 	sudo uck-remaster-unpack-rootfs .
 
-chroot: remaster-root
+chroot: # (requires remaster-root)
 	sudo uck-remaster-chroot-rootfs .
 
 findmnt:
@@ -53,17 +53,23 @@ customize: remaster-root # (make customize in /root of chroot)
 pack-rootfs: umount
 	sudo uck-remaster-pack-rootfs .
 
-custom-preseed: remaster-iso
+custom-preseed: # (requires remaster-iso)
 	sudo rsync -av ./remaster-root-home/iso/ ./remaster-iso
+
+custom-initrd: # (requires remaster-iso)
+	( cd remaster-initrds ; make initrd-custom )
+	sudo rsync -av ./remaster-initrds/initrd-custom \
+		remaster-iso/casper/initrd
 
 pack-iso:
 	sudo uck-remaster-pack-iso $(ISO_CUSTOM) . \
 	--generate-md5 --description=$(CUSTOM)
 
-pack: pack-rootfs custom-preseed pack-iso
-iso: remaster-root customize pack
+pack-custom-iso: custom-initrd custom-preseed pack-iso
+iso: remaster-root customize pack-rootfs pack-custom-iso
 
-clean:
+
+clean: umount
 	sudo rm -rf ./remaster-root
 	sudo rm -rf ./remaster-apt-cache
 	sudo rm -rf ./remaster-iso
