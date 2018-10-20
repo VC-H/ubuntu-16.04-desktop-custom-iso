@@ -36,14 +36,16 @@ initrd%: rd%
 	( cd $< ; find | $(CO) > ../$@ )
 
 rd2.1: rd2
-	rsync -a rd2 rd2.1
+	rsync -a rd2/ rd2.1
 	rsync -av custom/ rd2.1
 
-initrd.packed: initrd0 initrd1 initrd2.1
+initrd-custom: initrd0 initrd1 initrd2.1
 	cat $+ > $@
 
 clean:
-	rm -f initrd.packed
+	rm -f initrd-custom
 	rm -f initrd[012]*
 	rm -rf rd[012]*
 	rm -f initrd-[012]
+
+.PHONY: rd2.1
