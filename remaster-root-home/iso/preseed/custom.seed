@@ -12,7 +12,9 @@ d-i	passwd/user-fullname string custom user
 d-i	passwd/username string customuser
 d-i	passwd/user-password password custom
 d-i	passwd/user-password-again password custom
+d-i	passwd/user-uid string 999
 d-i	passwd/auto-login boolean true
 d-i	user-setup/allow-password-weak boolean true
 d-i	user-setup/encrypt-home boolean false
+d-i	netcfg/get_hostname string custom
 d-i	netcfg/hostname string custom
