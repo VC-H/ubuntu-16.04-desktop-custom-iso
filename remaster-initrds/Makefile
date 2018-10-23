@@ -30,14 +30,14 @@ initrd-2: rd1
 	dd if=initrd-1 skip=2952 | lzcat > $@
 
 initrd2%: rd2%
-	( cd $< ; find | $(CO) | lzma -z >  ../$@ )
+	( cd rd2 ; find | $(CO) | lzma -z >  ../$@ )
 
 initrd%: rd%
 	( cd $< ; find | $(CO) > ../$@ )
 
 rd2.1: rd2
-	rsync -a rd2/ rd2.1
-	rsync -av custom/ rd2.1
+	# rsync -a rd2/ rd2.1
+	rsync -av custom/ rd2
 
 initrd-custom: initrd0 initrd1 initrd2.1
 	cat $+ > $@
