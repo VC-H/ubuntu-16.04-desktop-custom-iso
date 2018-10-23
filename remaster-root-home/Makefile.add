@@ -1,0 +1,24 @@
+# -*- makefile -*-
+
+SHELL = /bin/bash
+
+SOURCESLIST = /etc/apt/sources.list
+UNIVERSE = "deb http://archive.ubuntu.com/ubuntu/ xenial main universe"
+
+PKGS = \
+python-qt4 python-qt4-dbus python-qwt5-qt4 \
+python-numpy python-scipy \
+python-excelerator python-reportlab
+
+default:
+	@make --quiet
+
+universe:
+	grep -q "^deb http:.* xenial main universe" $(SOURCESLIST) || \
+	echo $(UNIVERSE) >> $(SOURCESLIST)
+	apt-get update
+
+pkgs: universe
+	apt-get install --yes $(PKGS)
+	apt-get --purge autoremove
+	apt-get clean

@@ -21,6 +21,7 @@ default:
 	@echo
 	@echo "  make customize o=--yes # (main goal)"
 	@echo "  make [target] [o=--yes] # (default is o=--dry-run)"
+	@echo "  make -f Makefile.add [universe|pkgs]"
 	@echo
 	@echo "targets:"
 	@echo
@@ -123,12 +124,15 @@ all-no-only-all:
 smaller:
 	make --quiet all-no-only-all | xargs make --quiet o=$(o)
 
-install-new-custom:
+additions:
+	make -f Makefile.add pkgs
+
+install-custom:
 	rm -rf /opt/custom
 	rsync -av ./custom /opt/
 
 sudoers:
 	cp ./sudoers.d/custom /etc/sudoers.d/
 
-customize: smaller sudoers install-new-custom
+customize: smaller additions sudoers install-custom
 	( cd /opt/custom ; make rsync )
