@@ -79,4 +79,4 @@ clean-all:
 	sudo rm -rf ./remaster-new-files
 
 purge:
-	find . -name "*~" -exec rm {} +
+	sudo find . -name "*~" -exec rm {} \;
