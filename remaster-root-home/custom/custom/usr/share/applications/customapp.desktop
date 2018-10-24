@@ -2,8 +2,8 @@
 Version=1.0
 Type=Application
 Terminal=false
-Exec=/opt/custom/bin/customapp.sh
-Name=customapp
-Comment=customapp nosudo
-Icon=/opt/custom/share/icons/smiley-locked.png
-Name[en_GB]=customapp
+Exec=sudo /opt/custom/bin/customapp.py
+Name=customapp-sudo
+Comment=sudo customapp
+Icon=/opt/custom/share/icons/smiley.png
+Name[en_GB]=sudo customapp
