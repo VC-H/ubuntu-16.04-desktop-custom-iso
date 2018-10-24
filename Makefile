@@ -74,8 +74,7 @@ clean: umount
 	sudo rm -rf ./remaster-apt-cache
 	sudo rm -rf ./remaster-iso
 
-clean-all:
-	make clean
+clean-all: clean
 	sudo rm -rf ./remaster-new-files
 
 purge:
