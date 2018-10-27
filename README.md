@@ -71,7 +71,7 @@ make iso
 
 * Installed ![](https://avatars1.githubusercontent.com/u/23016403?s=20&v=1)
   [/usr/share/applications/customapp.desktop](
-  remaster-root-home/custom/usr/share/applications/customapp.desktop) to
+  remaster-root-home/custom/custom/usr/share/applications/customapp.desktop) to
     -  execute [sudo /opt/custom/bin/customapp.py](
        remaster-root-home/custom/bin/customapp.py)
 
