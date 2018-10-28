@@ -2,9 +2,12 @@
 
 This repository is for building a custom live/installation medium
 based the official `ubuntu-16.04.5-desktop-amd64.iso`.  The repository
-consists of a set of files to add to installation medium for the
-target host.  The building process of the custom medium is performed
-by a set of *Makefile*s.
+consists of a set of files to add to the installation medium for the
+target host.  The building process is handled by a set of *Makefile*s
+using uck. There are other *Makefiles* options to perform different
+customizatons selectively (see [wiki](
+https://github.com/VC-H/ubuntu-16.04-desktop-custom-iso/wiki))
+
 
 ## Building the iso
 
@@ -58,12 +61,12 @@ make iso
   remaster-root-home/Makefile))
     - libreoffice, thunderbird, ...
 
-* Additional packages from source *universe*
+* Installation of additional packages from source *universe*
   ([$remaster-root-home/Makefile.add](
   remaster-root-home/Makefile.add))
 	- `python-qt4`, `python-qt4-dbus`, ...
 
-* [$remaster-root-home/custom/](remaster-root-home/custom/)
+* Installed [$remaster-root-home/custom/](remaster-root-home/custom/)
   as a 3rd party installaton package to `/opt/`
     - [/opt/custom/bin/customapp.py](
 	  remaster-root-home/custom/bin/customapp.py)
@@ -76,8 +79,3 @@ make iso
        remaster-root-home/custom/bin/customapp.py)
 
 * Granted `customuser` `sudo /opt/custom/bin/customapp.py` without password;
-
-## Makefiles
-
-The *Makefiles* contain many options for building, details in the
-[wiki](https://github.com/VC-H/ubuntu-16.04-desktop-custom-iso/wiki).
