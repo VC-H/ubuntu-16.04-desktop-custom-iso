@@ -76,3 +76,8 @@ make iso
        remaster-root-home/custom/bin/customapp.py)
 
 * Granted `customuser` `sudo /opt/custom/bin/customapp.py` without password;
+
+## Makefiles
+
+The *Makefiles* contain many options for building, details in the
+[wiki](https://github.com/VC-H/ubuntu-16.04-desktop-custom-iso/wiki).
